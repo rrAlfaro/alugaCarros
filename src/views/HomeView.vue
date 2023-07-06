@@ -10,7 +10,11 @@
         <p class="text-xs px-1 mt-2 font-medium">Descubra o melhor carro para você e sua viagem, economize, viage sem preocupações e muito mais.</p>
       </section>
       <section class="my-8">
-
+        <div>
+          <VueDatePicker v-model="date"></VueDatePicker>
+          <!-- <label for="" class=""></label>
+          <input type=""> -->
+        </div>
       </section>
     </main>
   </div>
@@ -18,5 +22,7 @@
 
 <script setup>
 import NavMenu from '@/components/NavMenu.vue'
+import VueDatePicker from '@vuepic/vue-datepicker';
+import '@vuepic/vue-datepicker/dist/main.css'
 
 </script>
