@@ -109,7 +109,7 @@
           <img v-if="car.id === carSelect" v-show="car.id === carSelect" :src="getCarImage(car.image)"
             class="w-full h-[16vh] my-16 object-cover">
           <table v-if="car.id === carSelect" class="divide-y-2 divide-black">
-            <tr class="divide-y divide-black">
+            <tr class="border">
               <th>{{ car.price }} /dia</th>
             </tr>
             <tr>
