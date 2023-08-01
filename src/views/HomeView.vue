@@ -2,8 +2,9 @@
   <div>
     <NavMenu class="z-20" />
 
-    <main class="mx-[10%]">
-      <section class="flex flex-col items-center justify-center h-[55vh] mx-auto max-w-[18rem] text-center">
+    <main class="">
+      <!-- <section class="flex flex-col items-center justify-center h-[55vh] mx-[10%] max-w-[18rem] text-center"> -->
+      <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[url('src/assets/img/backgrounds/bg-principal.jpg')]">
         <h3 class="font-bold">Planeje, explore e inspire-se</h3>
         <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
         </h1>
@@ -12,7 +13,7 @@
       </section>
 
       <section
-        class="flex flex-col items-center justify-center h-[35vh] mx-auto max-w-[18rem] gap-3 text-center text-xl font-extrabold text-white">
+        class="flex flex-col items-center justify-center h-[35vh] mx-[10%] max-w-[18rem] gap-3 text-center text-xl font-extrabold text-white">
         <button
           class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]">Reserve
           <i class="fa-solid fa-chevron-right"></i></button>
@@ -21,7 +22,7 @@
           mais <i class="fa-solid fa-chevron-right"></i></button>
       </section>
 
-      <section class="my-16">
+      <section class="mx-[10%] my-16">
         <div class="text-center mb-10">
           <p class="font-bold text-slate-800">Planeje sua viagem</p>
           <h2 class="p-1 text-3xl font-extrabold">Aluguel de forma rápida e fácil</h2>
@@ -36,7 +37,7 @@
         </div>
       </section>
 
-      <section class="my-16">
+      <section class="mx-[10%] my-16">
         <div class="text-center mb-10">
           <p class="font-bold text-slate-800">Nos diga onde e quando</p>
           <h2 class="p-1 text-3xl font-extrabold">Reserve um carro</h2>
@@ -62,7 +63,7 @@
           <select name="retirada" id="retirada"
             class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
             <option value="" class="font-bold">Selecione um local</option>
-            <option v-for="store in stores" :key="store" :value="store">{{ store }}</option>
+            <option v-for="store in stores" :key="store.name" :value="store.name">{{ store.name }}</option>
           </select>
         </div>
 
@@ -74,7 +75,7 @@
           <select name="devolucao" id="devolucao"
             class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
             <option value="Florianópolis" class="font-bold">Selecione um local</option>
-            <option v-for="store in stores" :key="store" :value="store">{{ store }}</option>
+            <option v-for="store in stores" :key="store.name" :value="store.name">{{ store.name }}</option>
           </select>
         </div>
 
@@ -92,10 +93,10 @@
         </div>
       </section>
 
-      <section class="my-16">
+      <section class="mx-[10%] my-16">
         <div class="text-center mb-10">
-          <h2 class="p-1 text-3xl font-extrabold">Nossa frota</h2>
-          <p class="font-bold text-slate-800">Um carro para sua próxima aventura</p>
+          <p class="font-bold text-slate-800">Nossa frota</p>
+          <h2 class="p-1 text-3xl font-extrabold">Um carro para sua próxima aventura</h2>
         </div>
 
         <ul class="my-16">
@@ -107,45 +108,111 @@
 
         <div v-for="car in cars" :key="car.id">
           <img v-if="car.id === carSelect" v-show="car.id === carSelect" :src="getCarImage(car.image)"
-            class="w-full h-[16vh] my-16 object-cover">
-          <table v-if="car.id === carSelect" class="divide-y-2 divide-black">
-            <tr class="border">
-              <th>{{ car.price }} /dia</th>
-            </tr>
-            <tr>
-              <th class="divide-y divide-black">Modelo</th>
-              <td>{{ car.model }}</td>
-            </tr>
-            <tr>
-              <th>Marca</th>
-              <td>{{ car.mark }}</td>
-            </tr>
-            <tr>
-              <th>Ano</th>
-              <td>{{ car.year }}</td>
-            </tr>
-            <tr>
-              <th>Motor</th>
-              <td>{{ car.fuel }}</td>
-            </tr>
-            <tr>
-              <th>Câmbio</th>
-              <td>{{ car.transmission }}</td>
-            </tr>
-            <tr>
-              <th>Portas</th>
-              <td>{{ car.doors }}</td>
-            </tr>
-            <tr>
-              <th>Lugares</th>
-              <td>{{ car.seats }}</td>
-            </tr>
-          </table>
+            class="w-full h-[30vh] my-16 object-contain">
+
+          <div v-if="car.id === carSelect" class="border border-solid border-[#FF914D] rounded-sm">
+            <p class="col-span-2 py-1 px-10 text-xl font-bold text-white bg-[#FF914D]"><i
+                class="text-3xl italic font-extrabold">{{ car.price }}</i> /dia</p>
+            <div class="flex flex-col divide-y divide-solid divide-slate-400">
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Modelo</p>
+                <p class="flex items-center justify-center">{{ car.model }}</p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Marca</p>
+                <p class="flex items-center justify-center">{{ car.mark }}</p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Ano</p>
+                <p class="flex items-center justify-center">{{ car.year }}</p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Motor</p>
+                <p class="flex items-center justify-center">{{ car.fuel }}</p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Câmbio</p>
+                <p class="flex items-center justify-center">{{ car.transmission }}</p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Portas</p>
+                <p class="flex items-center justify-center">{{ car.doors }}</p>
+              </div>
+              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                <p class="pl-8 text-lg">Lugares</p>
+                <p class="flex items-center justify-center">{{ car.seats }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 text-white bg-cover bg-center" :class="bgImageUrl">
+        <div class="mb-10 text-center">
+          <p class="font-bold">Nossas lojas</p>
+          <h2 class="p-1 text-3xl font-extrabold">Nos destinos mais populares</h2>
+        </div>
+        <div class="flex items-center">
+          <button @click="changePlaceControl('left')">
+            <i class="fa-solid fa-chevron-left text-5xl p-3 hover:scale-90 active:scale-90"></i>
+          </button>
+
+          <div class="w-2/4 mx-auto p-4 bg-transparent/50">
+            <div v-for="store in stores" :key="store">
+              <button v-if="store.type_id === placeControl"
+                class="flex items-center justify-between w-full p-2 transition-all group hover:scale-90 active:scale-90">
+                <p
+                  class="group-hover:underline group-hover:underline-offset-2 group-active:underline group-active:underline-offset-2">
+                  {{ store.name }}</p>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          <button @click="changePlaceControl('right')">
+            <i class="fa-solid fa-chevron-right text-5xl p-3 hover:scale-90 active:scale-90"></i>
+          </button>
+        </div>
+      </section>
+
+      <section class="mx-[10%] my-16">
+        <div class="mb-10 text-center">
+          <p class="font-bold">blablabla</p>
+          <h2 class="p-1 text-3xl font-extrabold">Baixe nosso aplicativo</h2>
+        </div>
+      </section>
+
+      <section class="py-16 bg-gray-900 text-white">
+        <div class="mx-[10%]">
+          <div class="mb-10 text-center text-[#FF914D]">
+            <p class="font-bold">Ficou com dúvidas?</p>
+            <h2 class="p-1 text-3xl font-extrabold">Perguntas frequentes</h2>
+          </div>
+
+          <ul>
+            <li v-for="question in faq" :key="question.id" class="py-2">
+              <button @click="changeFaqControl(question.id)" type="button"
+                class="flex items-center justify-between w-full pb-2">
+                <h3 class="pr-4 text-left text-lg text-[#FF914D]">{{ question.question }}</h3>
+                <Transition name="rotate-icon">
+                  <i class="fa-solid fa-chevron-right" :class="{ 'fa-rotate-90': faqControl === question.id }"></i>
+                </Transition>
+              </button>
+              <Transition name="show-answer">
+                <p v-if="faqControl === question.id" class="pb-2 text-sm">{{ question.answer }}</p>
+              </Transition>
+              <div class="border border-solid border-[#FF914D] border-collapse"></div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
+    <footer class="flex items-center justify-center h-[35vh] bg-[#FF914D]">
+      AQUI FOOTER
+    </footer>
   </div>
 </template>
+
+<!-- ############################################################################### -->
 
 <script setup>
 //Imports
@@ -155,7 +222,7 @@ import VueDatePicker from '@/components/helpers/VueDatePicker.vue'
 import NavMenu from '@/components/NavMenu.vue'
 
 //Data 
-const planningSection = ref([
+const planningSection = [
   {
     title: 'Modelos',
     content: 'Diversos modelos, diversas experiências. Nos diga sua necessidade e te daremos uma solução.',
@@ -176,8 +243,8 @@ const planningSection = ref([
     content: 'Teve algum problema durante sua viagem? Temos uma equipe de assistência em prontidão para te ajudar. Vamos muito além do aluguel!',
     icon: 'fa-solid fa-car-burst'
   },
-])
-const cars = ref([
+]
+const cars = [
   {
     id: 1,
     model: 'A3',
@@ -250,14 +317,107 @@ const cars = ref([
     price: 'R$110',
     image: '../assets/img/cars/volkswagen_polo.png'
   }
-])
-const stores = ref(['Florianópolis', 'Joinville', 'Jaraguá do Sul', 'Curitiba', 'Balneário Camboriú', 'Blumenau', 'Penha', 'Pomerode'])
+]
+const stores = [
+  { type_id: 1, name: 'São Paulo' },
+  { type_id: 1, name: 'Rio de Janeiro' },
+  { type_id: 1, name: 'Porto Alegre' },
+  { type_id: 1, name: 'Belo Horizonte' },
+  { type_id: 1, name: 'Curitiba' },
+  { type_id: 2, name: 'Fortaleza' },
+  { type_id: 2, name: 'Salvador' },
+  { type_id: 2, name: 'Recife' },
+  { type_id: 2, name: 'Florianópolis' },
+  { type_id: 2, name: 'Maceió' },
+  { type_id: 3, name: 'João Pessoa' },
+  { type_id: 3, name: 'Porto Seguro' },
+  { type_id: 3, name: 'Osasco' },
+  { type_id: 3, name: 'Niterói' },
+  { type_id: 3, name: 'Barueri' },
+]
+const faq = [
+  {
+    id: 1,
+    question: 'O que é necessário para alugar um carro?',
+    answer: 'O locatário precisa ter 21 anos, Carteira Nacional de Habilitação (CNH) válida e emitida há mais de 2 anos (CNH definitiva) e cartão de crédito com limite suficiente para o bloqueio caução, também chamado de pré-autorização.',
+  },
+  {
+    id: 2,
+    question: 'Como funciona o caução?',
+    answer: 'O bloqueio caução ou pré-autorização é um valor retido no cartão de crédito do locatário para a segurança da locadora. Esta quantia, que é determinada pela própria locadora, não é cobrada como uma compra comum, mas sim bloqueada do limite do cartão de crédito. Essa é uma exigência das locadoras, que fazem o bloqueio no momento da retirada do veículo alugado. Mas pode ficar tranquilo! O valor é desbloqueado após a vistoria e entrega do carro nas mesmas condições de retirada.',
+  },
+  {
+    id: 3,
+    question: 'É possível devolver o carro em outra loja?',
+    answer: 'Sim! Na hora da reserva, basta nos informar o local de devolução e selecionar uma de nossas lojas.',
+  },
+  {
+    id: 4,
+    question: 'Preciso devolver o veículo com tanque cheio?',
+    answer: 'Nós entregamos o carro com o tanque cheio e é necessário fazer a devolução também com o tanque cheio, porém, caso você não queira se incomodar, pode apenas pagar a taxa de combustivel ao fim da sua locação.',
+  }
+]
 
 //Variables
 const carSelect = ref(1)
+const placeControl = ref(1)
+const faqControl = ref(0)
+//Computed variables
+const bgImageUrl = computed(() => {
+  switch (placeControl.value) {
+    case 2:
+      return "bg-[url('src/assets/img/backgrounds/sao-paulo.jpg')]"
+    case 3:
+      return "bg-[url('src/assets/img/backgrounds/brasil.jpg')]"
+    default:
+      return "bg-[url('src/assets/img/backgrounds/rio-de-janeiro.jpg')]"
+  }
+})
 
 //Functions
 const getCarImage = (img) => {
   return new URL(img, import.meta.url)
 }
+
+const changePlaceControl = (button) => {
+  switch (button) {
+    case "left":
+      if (placeControl.value > 1) {
+        placeControl.value--
+      }
+      break;
+
+    case "right":
+      if (placeControl.value < 3) {
+        placeControl.value++
+      }
+      break;
+  }
+}
+
+const changeFaqControl = (id) => {
+  id === faqControl.value ? faqControl.value = 0 : faqControl.value = id
+}
 </script>
+
+<!-- ############################################################################### -->
+
+<style>
+.show-answer-enter-from,
+.show-answer-leave-to {
+  transform: rotateX(-90deg);
+  opacity: 0;
+}
+
+.show-answer-enter-to,
+.show-answer-leave-from {
+  transform: rotateX(0);
+  opacity: 1;
+}
+
+.show-answer-enter-active,
+.show-answer-leave-active {
+  transform-origin: top;
+  transition: 0.5s ease-in-out;
+}
+</style>
