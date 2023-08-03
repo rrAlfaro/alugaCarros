@@ -1,6 +1,6 @@
 <template>
     <header class="sticky top-0 flex items-center justify-between p-4 h-[10vh] bg-white ">
-        <img class="h-10" src="../assets/img/logo/logo2.png" alt="Logomarca da Aluga Carros">
+        <img class="h-10" src="../assets/img/logo/color-logo.png" alt="Logomarca da Aluga Carros">
         <nav>
             <button @click="menuCtrl = !menuCtrl" class="text-4xl z-20" :class="{ 'fixed top-0 right-0 my-4 mx-4 text-5xl': !menuCtrl }">
                 <i :key="menuCtrl ? 'bars' : 'xmark'" :class="menuCtrl ? 'fa-solid fa-bars' : 'fa-solid fa-xmark'"></i>

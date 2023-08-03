@@ -3,8 +3,8 @@
     <NavMenu class="z-20" />
 
     <main class="">
-      <!-- <section class="flex flex-col items-center justify-center h-[55vh] mx-[10%] max-w-[18rem] text-center"> -->
-      <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[url('src/assets/img/backgrounds/bg-principal.jpg')]">
+      <section class="flex flex-col items-center justify-center h-[55vh] mx-[10%] text-center">
+        <!-- <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[u  rl('src/assets/img/backgrounds/bg-principal.jpg')]"> -->
         <h3 class="font-bold">Planeje, explore e inspire-se</h3>
         <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
         </h1>
@@ -13,7 +13,7 @@
       </section>
 
       <section
-        class="flex flex-col items-center justify-center h-[35vh] mx-[10%] max-w-[18rem] gap-3 text-center text-xl font-extrabold text-white">
+        class="flex flex-col items-center justify-center h-[35vh] mx-[10%] max-w-[18rem] mx-auto gap-3 text-center text-xl font-extrabold text-white">
         <button
           class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]">Reserve
           <i class="fa-solid fa-chevron-right"></i></button>
@@ -37,59 +37,61 @@
         </div>
       </section>
 
-      <section class="mx-[10%] my-16">
-        <div class="text-center mb-10">
-          <p class="font-bold text-slate-800">Nos diga onde e quando</p>
-          <h2 class="p-1 text-3xl font-extrabold">Reserve um carro</h2>
-        </div>
-
-        <div class="flex flex-col py-2">
-          <div class="flex items-center p-2">
-            <i class="fa-solid fa-car text-[#FF914D] text-xl"></i>
-            <label for="modelo" class="px-2">Modelo</label>
+      <section class="py-16 bg-gray-900 text-white">
+        <div class="mx-[10%]">
+          <div class="text-center mb-10">
+            <p class="font-bold ">Nos diga onde e quando</p>
+            <h2 class="p-1 text-3xl font-extrabold">Reserve um carro</h2>
           </div>
-          <select name="modelo" id="modelo"
-            class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
-            <option value="" class="font-bold">Selecione um modelo</option>
-            <option v-for="car in cars" :key="car.id" :value="car.id">{{ car.mark }} {{ car.model }}</option>
-          </select>
-        </div>
 
-        <div class="flex flex-col py-2">
-          <div class="flex items-center p-2">
-            <i class="fa-solid fa-location-dot text-[#FF914D] text-xl"></i>
-            <label for="retirada" class="px-2">Local de retirada</label>
+          <div class="flex flex-col py-2">
+            <div class="flex items-center p-2">
+              <i class="fa-solid fa-car text-[#FF914D] text-xl"></i>
+              <label for="modelo" class="px-2">Modelo</label>
+            </div>
+            <select name="modelo" id="modelo"
+              class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
+              <option value="" class="font-bold">Selecione um modelo</option>
+              <option v-for="car in cars" :key="car.id" :value="car.id">{{ car.mark }} {{ car.model }}</option>
+            </select>
           </div>
-          <select name="retirada" id="retirada"
-            class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
-            <option value="" class="font-bold">Selecione um local</option>
-            <option v-for="store in stores" :key="store.name" :value="store.name">{{ store.name }}</option>
-          </select>
-        </div>
 
-        <div class="flex flex-col py-2">
-          <div class="flex items-center p-2">
-            <i class="fa-solid fa-location-dot text-[#FF914D] text-xl"></i>
-            <label for="devolucao" class="px-2">Local de devolução</label>
+          <div class="flex flex-col py-2">
+            <div class="flex items-center p-2">
+              <i class="fa-solid fa-location-dot text-[#FF914D] text-xl"></i>
+              <label for="retirada" class="px-2">Local de retirada</label>
+            </div>
+            <select name="retirada" id="retirada"
+              class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
+              <option value="" class="font-bold">Selecione um local</option>
+              <option v-for="store in stores" :key="store.name" :value="store.name">{{ store.name }}</option>
+            </select>
           </div>
-          <select name="devolucao" id="devolucao"
-            class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
-            <option value="Florianópolis" class="font-bold">Selecione um local</option>
-            <option v-for="store in stores" :key="store.name" :value="store.name">{{ store.name }}</option>
-          </select>
-        </div>
 
-        <div>
-          <div class="flex p-2">
-            <i class="fa-regular fa-calendar text-[#FF914D] text-xl"></i>
-            <h4 class="px-2">Período de locação</h4>
+          <div class="flex flex-col py-2">
+            <div class="flex items-center p-2">
+              <i class="fa-solid fa-location-dot text-[#FF914D] text-xl"></i>
+              <label for="devolucao" class="px-2">Local de devolução</label>
+            </div>
+            <select name="devolucao" id="devolucao"
+              class="p-2 border border-slate-300 rounded-md bg-white text-sm text-slate-600">
+              <option value="Florianópolis" class="font-bold">Selecione um local</option>
+              <option v-for="store in stores" :key="store.name" :value="store.name">{{ store.name }}</option>
+            </select>
           </div>
-          <VueDatePicker></VueDatePicker>
-        </div>
 
-        <div class="pt-10">
-          <button
-            class="w-full py-2 text-white font-bold rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]">Reservar</button>
+          <div>
+            <div class="flex p-2">
+              <i class="fa-regular fa-calendar text-[#FF914D] text-xl"></i>
+              <h4 class="px-2">Período de locação</h4>
+            </div>
+            <VueDatePicker></VueDatePicker>
+          </div>
+
+          <div class="pt-10">
+            <button
+              class="w-full py-2 text-white font-bold rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]">Reservar</button>
+          </div>
         </div>
       </section>
 
@@ -176,9 +178,35 @@
 
       <section class="mx-[10%] my-16">
         <div class="mb-10 text-center">
-          <p class="font-bold">blablabla</p>
+          <p class="font-bold">Fique por dentro de tudo</p>
           <h2 class="p-1 text-3xl font-extrabold">Baixe nosso aplicativo</h2>
         </div>
+
+        <div class="flex flex-col items-center text-center">
+          <div class="flex justify-between items-center w-full">
+            <div class="flex flex-col text-white">
+              <button class="flex items-center p-1 my-1 rounded-md bg-gray-900">
+                <i class="fa-brands fa-apple text-4xl mr-2"></i>
+                <div class="text-left">
+                  <p class="text-sm">Baixar na</p>
+                  <p class="text-xl font-bold">App Store</p>
+                </div>
+              </button>
+              <button class="flex items-center p-1 my-1 rounded-md bg-gray-900">
+                <i class="fa-brands fa-google-play text-3xl mr-2"></i>
+                <div class="text-left">
+                  <p class="text-sm">Baixar na</p>
+                  <p class="text-xl font-bold">Google Play</p>
+                </div>
+              </button>
+            </div>
+            <img src="src/assets/img/app/app-icon.png" alt="Ícone do aplicativo" class="w-24">
+          </div>
+          <h3 class="mt-10 mb-2 text-xl text-center font-bold">Seu aluguel na palma da mão!</h3>
+          <p>Compare preços, fale conosco e alugue um carro onde estiver.</p>
+        </div>
+
+        <img v-if="false" src="src/assets/img/app/app-store.png" alt="Tela do aplicativo">
       </section>
 
       <section class="py-16 bg-gray-900 text-white">
@@ -206,8 +234,36 @@
         </div>
       </section>
     </main>
-    <footer class="flex items-center justify-center h-[35vh] bg-[#FF914D]">
-      AQUI FOOTER
+    <footer class="py-16 flex flex-col items-center justify-center  bg-[#FF914D]">
+      <img src="src/assets/img/logo/black-logo.png" alt="" class="bg-[#FF914D]">
+
+      <div>
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-square-x-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-phone-volume"></i>
+        <p>Central de reservas</p>
+        <p>24h - 0800-000-000</p>
+      </div>
+      <div>
+        <i class="fa-brands fa-whatsapp"></i>
+        <p>Assistência a clientes</p>
+        <p>24h - (11) 00000-0000</p>
+      </div>
+      <div>
+        <i class="fa-brands fa-whatsapp"></i>
+        <p>Assistência a clientes</p>
+        <p>24h - (11) 00000-0000</p>
+      </div>
+      <div>
+        <i class="fa-solid fa-envelope"></i>
+        <p>Envie uma mensagem</p>
+      </div>
     </footer>
   </div>
 </template>
