@@ -234,10 +234,67 @@
         </div>
       </section>
     </main>
-    <footer class="py-16 flex flex-col items-center justify-center  bg-[#FF914D]">
-      <img src="src/assets/img/logo/black-logo.png" alt="" class="bg-[#FF914D]">
+    
+    <footer class="py-16 flex flex-col items-center justify-center bg-[#FF914D]">
 
-      <div>
+      <div class="pb-4">
+        <h2 class="text-center font-bold">ACESSO CLIENTE</h2>
+
+        <div class="flex flex-col items-center py-2 child:py-1">
+          <button class="hover:font-bold active:font-bold">Acesse sua Conta</button>
+          <button class="hover:font-bold active:font-bold">Cadastra-se</button>
+          <button class="hover:font-bold active:font-bold">Consultar reservas</button>
+        </div>
+      </div>
+
+      <div class="py-4 cursor-default">
+        <h2 class="font-bold">ATENDIMENTO AO CLIENTE</h2>
+
+        <div class="flex flex-col items-center child:py-2">
+          <div>
+            <div class="flex items-center">
+              <i class="fa-solid fa-phone-volume"></i>
+              <p class="pl-3">Central de reservas</p>
+            </div>
+            <p>24h - 0800-000-000</p>
+          </div>
+
+          <div>
+            <div class="flex items-center">
+              <i class="fa-brands fa-whatsapp"></i>
+              <p class="pl-3">Assistência a clientes</p>
+            </div>
+            <p>24h - (11) 00000-0000</p>
+          </div>
+
+          <div>
+            <div class="flex items-center">
+              <i class="fa-brands fa-whatsapp"></i>
+              <p class="pl-3">Assistência a clientes</p>
+            </div>
+            <p>24h - (11) 00000-0000</p>
+          </div>
+
+          <div class="flex items-center">
+            <i class="fa-solid fa-envelope"></i>
+            <p class="pl-3">Envie uma mensagem</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="py-4">
+        <h2 class="text-center font-bold">SOBRE NÓS</h2>
+
+        <div class="flex flex-col items-center py-2 child:py-1">
+          <button class="hover:font-bold active:font-bold">Aluga carros</button>
+          <button class="hover:font-bold active:font-bold">Política de Privacidade</button>
+          <button class="hover:font-bold active:font-bold">Termos e Condições</button>
+          <button class="hover:font-bold active:font-bold">Código de Conduta</button>
+          <button class="hover:font-bold active:font-bold">Trabalhe Conosco</button>
+        </div>
+      </div>
+
+      <div class="pt-4 child:px-3 child:text-3xl ">
         <i class="fa-brands fa-facebook"></i>
         <i class="fa-brands fa-square-x-twitter"></i>
         <i class="fa-brands fa-instagram"></i>
@@ -245,25 +302,6 @@
         <i class="fa-brands fa-linkedin"></i>
       </div>
 
-      <div>
-        <i class="fa-solid fa-phone-volume"></i>
-        <p>Central de reservas</p>
-        <p>24h - 0800-000-000</p>
-      </div>
-      <div>
-        <i class="fa-brands fa-whatsapp"></i>
-        <p>Assistência a clientes</p>
-        <p>24h - (11) 00000-0000</p>
-      </div>
-      <div>
-        <i class="fa-brands fa-whatsapp"></i>
-        <p>Assistência a clientes</p>
-        <p>24h - (11) 00000-0000</p>
-      </div>
-      <div>
-        <i class="fa-solid fa-envelope"></i>
-        <p>Envie uma mensagem</p>
-      </div>
     </footer>
   </div>
 </template>

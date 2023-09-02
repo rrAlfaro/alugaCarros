@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const plugin = require('tailwindcss/plugin')
+
+export default {
   content: ["./src/**/*.{html,js,vue}"],
   theme: {
     extend: {
@@ -14,5 +16,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant('child', '& > *');
+    })],
 }
