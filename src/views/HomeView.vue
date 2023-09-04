@@ -2,7 +2,7 @@
   <div>
     <NavMenu class="z-20" />
 
-    <main class="">
+    <main id="start">
       <section class="flex flex-col items-center justify-center h-[55vh] mx-[10%] text-center">
         <!-- <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[u  rl('/img/backgrounds/bg-principal.jpg')]"> -->
         <h3 class="font-bold">Planeje, explore e inspire-se</h3>
@@ -13,13 +13,15 @@
       </section>
 
       <section
-        class="flex flex-col items-center justify-center h-[35vh] mx-[10%] max-w-[18rem] mx-auto gap-3 text-center text-xl font-extrabold text-white">
+        class="flex flex-col items-center justify-center h-[35vh] mx-[10%] max-w-[18rem] gap-3 text-center text-xl font-extrabold text-white">
         <button
-          class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]">Reserve
-          <i class="fa-solid fa-chevron-right"></i></button>
+          class="w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a class="flex items-center justify-between w-full" href="#booking">Reserve
+          <i class="fa-solid fa-chevron-right"></i></a></button>
         <button
-          class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-gray-800 transition-all active:bg-black hover:bg-black">Saiba
-          mais <i class="fa-solid fa-chevron-right"></i></button>
+          class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-gray-800 transition-all active:bg-black hover:bg-black">
+          <a class="flex items-center justify-between w-full"  href="#footer">Saiba
+            mais <i class="fa-solid fa-chevron-right"></i></a>
+        </button>
       </section>
 
       <section class="mx-[10%] my-16">
@@ -37,7 +39,7 @@
         </div>
       </section>
 
-      <section class="py-16 bg-gray-900 text-white">
+      <section id="booking" class="py-16 bg-gray-900 text-white">
         <div class="mx-[10%]">
           <div class="text-center mb-10">
             <p class="font-bold ">Nos diga onde e quando</p>
@@ -95,7 +97,7 @@
         </div>
       </section>
 
-      <section class="mx-[10%] my-16">
+      <section id="fleet" class="mx-[10%] my-16">
         <div class="text-center mb-10">
           <p class="font-bold text-slate-800">Nossa frota</p>
           <h2 class="p-1 text-3xl font-extrabold">Um carro para sua próxima aventura</h2>
@@ -149,7 +151,7 @@
         </div>
       </section>
 
-      <section class="py-16 text-white bg-cover bg-center" :class="bgImageUrl">
+      <section id="stores" class="py-16 text-white bg-cover bg-center" :class="bgImageUrl">
         <div class="mb-10 text-center">
           <p class="font-bold">Nossas lojas</p>
           <h2 class="p-1 text-3xl font-extrabold">Nos destinos mais populares</h2>
@@ -209,7 +211,7 @@
         <img v-if="false" src="/img/app/app-store.png" alt="Tela do aplicativo">
       </section>
 
-      <section class="py-16 bg-gray-900 text-white">
+      <section id="faq" class="py-16 bg-gray-900 text-white">
         <div class="mx-[10%]">
           <div class="mb-10 text-center text-[#FF914D]">
             <p class="font-bold">Ficou com dúvidas?</p>
@@ -234,8 +236,8 @@
         </div>
       </section>
     </main>
-    
-    <footer class="py-16 flex flex-col items-center justify-center bg-[#FF914D]">
+
+    <footer id="footer" class="py-16 flex flex-col items-center justify-center bg-[#FF914D]">
 
       <div class="pb-4">
         <h2 class="text-center font-bold">ACESSO CLIENTE</h2>
@@ -256,7 +258,7 @@
               <i class="fa-solid fa-phone-volume"></i>
               <p class="pl-3">Central de reservas</p>
             </div>
-            <p>24h - 0800-000-000</p>
+            <p class="text-center">24h - 0800-000-000</p>
           </div>
 
           <div>
@@ -264,7 +266,7 @@
               <i class="fa-brands fa-whatsapp"></i>
               <p class="pl-3">Assistência a clientes</p>
             </div>
-            <p>24h - (11) 00000-0000</p>
+            <p class="text-center">24h - (11) 00000-0000</p>
           </div>
 
           <div>
@@ -272,7 +274,7 @@
               <i class="fa-brands fa-whatsapp"></i>
               <p class="pl-3">Assistência a clientes</p>
             </div>
-            <p>24h - (11) 00000-0000</p>
+            <p class="text-center">24h - (11) 00000-0000</p>
           </div>
 
           <div class="flex items-center">
