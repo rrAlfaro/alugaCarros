@@ -4,7 +4,7 @@
 
     <main class="">
       <section class="flex flex-col items-center justify-center h-[55vh] mx-[10%] text-center">
-        <!-- <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[u  rl('src/assets/img/backgrounds/bg-principal.jpg')]"> -->
+        <!-- <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[u  rl('/img/backgrounds/bg-principal.jpg')]"> -->
         <h3 class="font-bold">Planeje, explore e inspire-se</h3>
         <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
         </h1>
@@ -200,13 +200,13 @@
                 </div>
               </button>
             </div>
-            <img src="src/assets/img/app/app-icon.png" alt="Ícone do aplicativo" class="w-24">
+            <img src="/img/app/app-icon.png" alt="Ícone do aplicativo" class="w-24">
           </div>
           <h3 class="mt-10 mb-2 text-xl text-center font-bold">Seu aluguel na palma da mão!</h3>
           <p>Compare preços, fale conosco e alugue um carro onde estiver.</p>
         </div>
 
-        <img v-if="false" src="src/assets/img/app/app-store.png" alt="Tela do aplicativo">
+        <img v-if="false" src="/img/app/app-store.png" alt="Tela do aplicativo">
       </section>
 
       <section class="py-16 bg-gray-900 text-white">
@@ -349,7 +349,7 @@ const cars = [
     fuel: 'Gasolina',
     transmission: 'Automático',
     price: 'R$124',
-    image: "../assets/img/cars/audi_a3.png"
+    image: "/img/cars/audi_a3.png"
   },
   {
     id: 2,
@@ -361,7 +361,7 @@ const cars = [
     fuel: 'Gasolina',
     transmission: 'Manual',
     price: 'R$74',
-    image: '../assets/img/cars/chevrolet_onix.png'
+    image: '/img/cars/chevrolet_onix.png'
   },
   {
     id: 3,
@@ -373,7 +373,7 @@ const cars = [
     fuel: 'Gasolina',
     transmission: 'Automático',
     price: 'R$88',
-    image: '../assets/img/cars/hyundai_hb20.png'
+    image: '/img/cars/hyundai_hb20.png'
   },
   {
     id: 4,
@@ -385,7 +385,7 @@ const cars = [
     fuel: 'Gasolina',
     transmission: 'Automático',
     price: 'R$206',
-    image: '../assets/img/cars/jeep_grand.png'
+    image: '/img/cars/jeep_grand.png'
   },
   {
     id: 5,
@@ -397,7 +397,7 @@ const cars = [
     fuel: 'Gasolina',
     transmission: 'Automático',
     price: 'R$118',
-    image: '../assets/img/cars/toyota_corolla.png'
+    image: '/img/cars/toyota_corolla.png'
   },
   {
     id: 6,
@@ -409,7 +409,7 @@ const cars = [
     fuel: 'Diesel',
     transmission: 'Automático',
     price: 'R$110',
-    image: '../assets/img/cars/volkswagen_polo.png'
+    image: '/img/cars/volkswagen_polo.png'
   }
 ]
 const stores = [
@@ -460,11 +460,11 @@ const faqControl = ref(0)
 const bgImageUrl = computed(() => {
   switch (placeControl.value) {
     case 2:
-      return "bg-[url('src/assets/img/backgrounds/sao-paulo.jpg')]"
+      return "bg-[url('/img/backgrounds/sao-paulo.jpg')]"
     case 3:
-      return "bg-[url('src/assets/img/backgrounds/brasil.jpg')]"
+      return "bg-[url('/img/backgrounds/brasil.jpg')]"
     default:
-      return "bg-[url('src/assets/img/backgrounds/rio-de-janeiro.jpg')]"
+      return "bg-[url('/img/backgrounds/rio-de-janeiro.jpg')]"
   }
 })
 
