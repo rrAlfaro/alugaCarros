@@ -34,7 +34,7 @@
         </div>
 
         <div
-          class="flex flex-col items-center justify-center text-center gap-10 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+          class="flex flex-col items-center justify-center text-center gap-10 md:grid md:grid-cols-2 xl:flex xl:flex-row">
           <div v-for="item in planningSection" :key="item.title"
             class="first:pt-6 md:first:pt-0 md:flex md:flex-col md:items-center md:justify-center">
             <i class="text-5xl text-[#FF914D] p-2" :class="item.icon"></i>
@@ -163,15 +163,22 @@
           <p class="font-bold">Nossas lojas</p>
           <h2 class="p-1 text-3xl font-extrabold">Nos destinos mais populares</h2>
         </div>
-        <div class="flex items-center">
-          <button @click="changePlaceControl('left')">
+        <div class="flex items-center max-w-md mx-auto lg:max-w-2xl">
+          <button @click="changePlaceControl('left')" class="lg:hidden">
             <i class="fa-solid fa-chevron-left text-5xl p-3 hover:scale-90 active:scale-90"></i>
           </button>
 
-          <div class="w-2/4 mx-auto p-4 bg-transparent/50">
-            <div v-for="store in stores" :key="store">
+          <div class="w-2/4 mx-auto p-4 bg-transparent/50 lg:grid lg:grid-cols-3 lg:w-full">
+            <div v-for="store in stores" :key="store" class="lg:w-2/3 lg:mx-auto">
               <button v-if="store.type_id === placeControl"
-                class="flex items-center justify-between w-full p-2 transition-all group hover:scale-90 active:scale-90">
+                class="flex items-center justify-between w-full p-2 transition-all group hover:scale-90 active:scale-90 lg:hidden">
+                <p
+                  class="group-hover:underline group-hover:underline-offset-2 group-active:underline group-active:underline-offset-2">
+                  {{ store.name }}</p>
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+              <button
+                class="hidden items-center justify-between w-full p-2 transition-all group hover:scale-90 active:scale-90 lg:flex">
                 <p
                   class="group-hover:underline group-hover:underline-offset-2 group-active:underline group-active:underline-offset-2">
                   {{ store.name }}</p>
@@ -179,13 +186,13 @@
               </button>
             </div>
           </div>
-          <button @click="changePlaceControl('right')">
+          <button @click="changePlaceControl('right')" class="lg:hidden">
             <i class="fa-solid fa-chevron-right text-5xl p-3 hover:scale-90 active:scale-90"></i>
           </button>
         </div>
       </section>
 
-      <section class="mx-[10%] my-16">
+      <section class="mx-[10%] my-16 lg:max-w-6xl lg:mx-auto">
         <div class="mb-10 text-center">
           <p class="font-bold">Fique por dentro de tudo</p>
           <h2 class="p-1 text-3xl font-extrabold">Baixe nosso aplicativo</h2>
@@ -219,7 +226,7 @@
       </section>
 
       <section id="faq" class="py-16 bg-gray-900 text-white">
-        <div class="mx-[10%]">
+        <div class="mx-[10%] lg:max-w-6xl xl:mx-auto">
           <div class="mb-10 text-center text-[#FF914D]">
             <p class="font-bold">Ficou com dúvidas?</p>
             <h2 class="p-1 text-3xl font-extrabold">Perguntas frequentes</h2>
