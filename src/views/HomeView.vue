@@ -2,45 +2,50 @@
   <div>
     <NavMenu class="z-20" />
 
-    <main id="start">
-      <section class="flex flex-col items-center justify-center h-[55vh] mx-[10%] text-center">
-        <!-- <section class="flex flex-col items-center justify-center h-[55vh] text-center bg-cover bg-center bg-[u  rl('/img/backgrounds/bg-principal.jpg')]"> -->
+    <main>
+      <section class="flex flex-col items-center justify-center h-[80vh] my-16 mx-[10%] text-center md:max-w-sm">
         <h3 class="font-bold">Planeje, explore e inspire-se</h3>
+
         <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
         </h1>
+
         <p class="px-1 mt-4 font-normal text-slate-800">Descubra o melhor carro para você, economize, viage sem
           preocupações e muito mais.</p>
+
+        <div
+          class="flex flex-col items-center justify-center w-full my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white ">
+          <button class="w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a
+              class="flex items-center justify-between w-full" href="#booking">Reserve
+              <i class="fa-solid fa-chevron-right"></i></a></button>
+          <button
+            class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-gray-800 transition-all active:bg-black hover:bg-black">
+            <a class="flex items-center justify-between w-full" href="#footer">Saiba
+              mais <i class="fa-solid fa-chevron-right"></i></a>
+          </button>
+        </div>
       </section>
 
-      <section
-        class="flex flex-col items-center justify-center h-[35vh] mx-[10%] max-w-[18rem] gap-3 text-center text-xl font-extrabold text-white">
-        <button
-          class="w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a class="flex items-center justify-between w-full" href="#booking">Reserve
-          <i class="fa-solid fa-chevron-right"></i></a></button>
-        <button
-          class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-gray-800 transition-all active:bg-black hover:bg-black">
-          <a class="flex items-center justify-between w-full"  href="#footer">Saiba
-            mais <i class="fa-solid fa-chevron-right"></i></a>
-        </button>
-      </section>
 
-      <section class="mx-[10%] my-16">
+
+      <section class="mx-[10%] my-16 lg:max-w-6xl lg:mx-auto">
         <div class="text-center mb-10">
           <p class="font-bold text-slate-800">Planeje sua viagem</p>
           <h2 class="p-1 text-3xl font-extrabold">Aluguel de forma rápida e fácil</h2>
         </div>
 
-        <div class="flex flex-col items-center justify-center text-center gap-10">
-          <div v-for="item in planningSection" :key="item.title" class="first:pt-6">
+        <div
+          class="flex flex-col items-center justify-center text-center gap-10 md:grid md:grid-cols-2 lg:flex lg:flex-row">
+          <div v-for="item in planningSection" :key="item.title"
+            class="first:pt-6 md:first:pt-0 md:flex md:flex-col md:items-center md:justify-center">
             <i class="text-5xl text-[#FF914D] p-2" :class="item.icon"></i>
             <h3 class="text-xl font-bold p-2">{{ item.title }}</h3>
-            <p class="text-sm p-2">{{ item.content }}</p>
+            <p class="text-sm p-2 max-w-sm md:max-w-xs">{{ item.content }}</p>
           </div>
         </div>
       </section>
 
       <section id="booking" class="py-16 bg-gray-900 text-white">
-        <div class="mx-[10%]">
+        <div class="mx-[10%] max-w-lg sm:mx-auto">
           <div class="text-center mb-10">
             <p class="font-bold ">Nos diga onde e quando</p>
             <h2 class="p-1 text-3xl font-extrabold">Reserve um carro</h2>
@@ -113,7 +118,9 @@
         <div v-for="car in cars" :key="car.id">
           <img v-if="car.id === carSelect" v-show="car.id === carSelect" :src="getCarImage(car.image)"
             class="w-full h-[30vh] my-16 object-contain">
+        </div>
 
+        <div v-for="car in cars" :key="car.id">
           <div v-if="car.id === carSelect" class="border border-solid border-[#FF914D] rounded-sm">
             <p class="col-span-2 py-1 px-10 text-xl font-bold text-white bg-[#FF914D]"><i
                 class="text-3xl italic font-extrabold">{{ car.price }}</i> /dia</p>
