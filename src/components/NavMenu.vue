@@ -1,5 +1,5 @@
 <template>
-    <header class="sticky top-0 flex items-center justify-between p-4 h-[10vh] bg-white ">
+    <header class="sticky top-0 flex items-center justify-between p-4 h-[10vh] bg-white lg:px-8">
         <button type="button"><a href="#start"><img class="h-10 lg:h-12" src="/img/logo/color-logo.png"
                     alt="Logomarca da Aluga Carros"></a></button>
         <nav class="md:hidden">
@@ -19,10 +19,9 @@
         </nav>
         <nav class="hidden md:flex">
             <ul class="flex items-center">
-                <li v-for="menuItem in menuItems" :key="menuItem.name" class="px-2 last:pr-0 first:pl-0 lg:px-4">
+                <li v-for="menuItem in menuItems" :key="menuItem.name" class="px-2 last:pr-0 first:pl-0 lg:px-4 xl:px-8">
                     <transition name="link-animation">
-                        <a :href="menuItem.href" class="hover:font-bold menu-link" :class="{ 'p-1 text-gray-700 font-bold border-4 border-solid rounded-sm border-[#FF914D] hover:bg-[#FF914D] hover:text-white' : menuItem.name === 'Acesse sua conta'}">{{ menuItem.name }}</a>
-                    
+                        <a :href="menuItem.href" class="inline-block hover:font-bold menu-link" :class="{ 'p-1 text-gray-700 font-bold border-4 border-solid rounded-sm border-[#FF914D] hover:bg-[#FF914D] hover:text-white' : menuItem.name === 'Acesse sua conta'}">{{ menuItem.name }}</a>
                     </transition>
                 </li>
             </ul>

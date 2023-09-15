@@ -3,29 +3,31 @@
     <NavMenu class="z-20" />
 
     <main>
-      <section class="flex flex-col items-center justify-center h-[80vh] my-16 mx-[10%] text-center md:max-w-sm">
-        <h3 class="font-bold">Planeje, explore e inspire-se</h3>
+      <section
+        class="flex flex-col items-center justify-center h-[80vh] my-16 mx-[10%] text-center md:max-w-sm">
+        <div>
+          <h3 class="font-bold">Planeje, explore e inspire-se</h3>
 
-        <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
-        </h1>
+          <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
+          </h1>
 
-        <p class="px-1 mt-4 font-normal text-slate-800">Descubra o melhor carro para você, economize, viage sem
-          preocupações e muito mais.</p>
+          <p class="px-1 mt-4 font-normal text-slate-800">Descubra o melhor carro para você, economize, viage sem
+            preocupações e muito mais.</p>
 
-        <div
-          class="flex flex-col items-center justify-center w-full my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white ">
-          <button class="w-4/5 px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a
-              class="flex items-center justify-between w-full" href="#booking">Reserve
-              <i class="fa-solid fa-chevron-right"></i></a></button>
-          <button
-            class="flex items-center justify-between w-4/5 px-4 py-3 rounded-sm bg-gray-800 transition-all active:bg-black hover:bg-black">
-            <a class="flex items-center justify-between w-full" href="#footer">Saiba
-              mais <i class="fa-solid fa-chevron-right"></i></a>
-          </button>
+          <div
+            class="flex flex-col items-center justify-center w-full my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white ">
+            <button
+              class="w-full px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a
+                class="flex items-center justify-between w-full" href="#booking">Reserve
+                <i class="fa-solid fa-chevron-right"></i></a></button>
+            <button
+              class="flex items-center justify-between w-full px-4 py-3 rounded-sm bg-gray-800 transition-all active:bg-black hover:bg-black">
+              <a class="flex items-center justify-between w-full" href="#footer">Saiba
+                mais <i class="fa-solid fa-chevron-right"></i></a>
+            </button>
+          </div>
         </div>
       </section>
-
-
 
       <section class="mx-[10%] my-16 lg:max-w-6xl lg:mx-auto">
         <div class="text-center mb-10">
@@ -108,50 +110,57 @@
           <h2 class="p-1 text-3xl font-extrabold">Um carro para sua próxima aventura</h2>
         </div>
 
-        <ul class="my-16">
-          <li v-for="car in cars" :key="car.id">
-            <button @click="carSelect = car.id" class="w-full px-4 py-2 my-1 text-left border border-gray-300 rounded-sm"
-              :class="{ 'bg-[#FF914D]': carSelect === car.id }">{{ car.mark }} {{ car.model }}</button>
-          </li>
-        </ul>
+        <div class="lg:flex lg:items-center lg:justify-between lg:max-w-6lg lg:mx-auto">
+          <div class="md:flex md:items-center md:justify-between lg:w-2/3">
+            <ul class="my-16 w-full md:min-w-[10rem] md:max-w-[12rem] xl:max-w-xs">
+              <li v-for="car in cars" :key="car.id">
+                <button @click="carSelect = car.id"
+                  class="w-full px-4 py-2 my-1 text-left border border-gray-300 rounded-sm"
+                  :class="{ 'bg-[#FF914D]': carSelect === car.id }">{{ car.mark }} {{ car.model }}</button>
+              </li>
+            </ul>
 
-        <div v-for="car in cars" :key="car.id">
-          <img v-if="car.id === carSelect" v-show="car.id === carSelect" :src="getCarImage(car.image)"
-            class="w-full h-[30vh] my-16 object-contain">
-        </div>
+            <div v-for="car in cars" :key="car.id">
+              <img v-if="car.id === carSelect" v-show="car.id === carSelect" :src="getCarImage(car.image)"
+                class="w-full h-[30vh] my-16 object-contain md:px-2">
+            </div>
+          </div>
 
-        <div v-for="car in cars" :key="car.id">
-          <div v-if="car.id === carSelect" class="border border-solid border-[#FF914D] rounded-sm">
-            <p class="col-span-2 py-1 px-10 text-xl font-bold text-white bg-[#FF914D]"><i
-                class="text-3xl italic font-extrabold">{{ car.price }}</i> /dia</p>
-            <div class="flex flex-col divide-y divide-solid divide-slate-400">
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Modelo</p>
-                <p class="flex items-center justify-center">{{ car.model }}</p>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Marca</p>
-                <p class="flex items-center justify-center">{{ car.mark }}</p>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Ano</p>
-                <p class="flex items-center justify-center">{{ car.year }}</p>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Motor</p>
-                <p class="flex items-center justify-center">{{ car.fuel }}</p>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Câmbio</p>
-                <p class="flex items-center justify-center">{{ car.transmission }}</p>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Portas</p>
-                <p class="flex items-center justify-center">{{ car.doors }}</p>
-              </div>
-              <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
-                <p class="pl-8 text-lg">Lugares</p>
-                <p class="flex items-center justify-center">{{ car.seats }}</p>
+          <div class="lg:w-1/3">
+            <div v-for="car in cars" :key="car.id">
+              <div v-if="car.id === carSelect" class="border border-solid border-[#FF914D] rounded-sm lg:my-16">
+                <p class="col-span-2 py-1 px-10 text-xl font-bold text-white bg-[#FF914D]"><i
+                    class="text-3xl italic font-extrabold">{{ car.price }}</i> /dia</p>
+                <div class="flex flex-col divide-y divide-solid divide-slate-400">
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Modelo</p>
+                    <p class="flex items-center justify-center">{{ car.model }}</p>
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Marca</p>
+                    <p class="flex items-center justify-center">{{ car.mark }}</p>
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Ano</p>
+                    <p class="flex items-center justify-center">{{ car.year }}</p>
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Motor</p>
+                    <p class="flex items-center justify-center">{{ car.fuel }}</p>
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Câmbio</p>
+                    <p class="flex items-center justify-center">{{ car.transmission }}</p>
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Portas</p>
+                    <p class="flex items-center justify-center">{{ car.doors }}</p>
+                  </div>
+                  <div class="grid grid-cols-2 divide-x divide-solid divide-slate-400">
+                    <p class="pl-8 text-lg">Lugares</p>
+                    <p class="flex items-center justify-center">{{ car.seats }}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -192,37 +201,39 @@
         </div>
       </section>
 
-      <section class="mx-[10%] my-16 lg:max-w-6xl lg:mx-auto">
+      <section class="mx-[10%] my-16 lg:max-w-6xl xl:mx-auto">
         <div class="mb-10 text-center">
           <p class="font-bold">Fique por dentro de tudo</p>
           <h2 class="p-1 text-3xl font-extrabold">Baixe nosso aplicativo</h2>
         </div>
 
         <div class="flex flex-col items-center text-center">
-          <div class="flex justify-between items-center w-full">
-            <div class="flex flex-col text-white">
-              <button class="flex items-center p-1 my-1 rounded-md bg-gray-900">
-                <i class="fa-brands fa-apple text-4xl mr-2"></i>
-                <div class="text-left">
-                  <p class="text-sm">Baixar na</p>
-                  <p class="text-xl font-bold">App Store</p>
-                </div>
-              </button>
-              <button class="flex items-center p-1 my-1 rounded-md bg-gray-900">
-                <i class="fa-brands fa-google-play text-3xl mr-2"></i>
-                <div class="text-left">
-                  <p class="text-sm">Baixar na</p>
-                  <p class="text-xl font-bold">Google Play</p>
-                </div>
-              </button>
+          <div class="flex items-center justify-between w-full max-w-lg child">
+            <div class="flex justify-between items-center w-full max-w-sm mx-auto md:flex-col md:justify-around md:mx-0">
+              <div class="flex flex-col text-white">
+                <button class="flex items-center p-1 my-1 rounded-md bg-gray-900">
+                  <i class="fa-brands fa-apple text-4xl mr-2"></i>
+                  <div class="text-left">
+                    <p class="text-sm">Baixar na</p>
+                    <p class="text-xl font-bold">App Store</p>
+                  </div>
+                </button>
+                <button class="flex items-center p-1 my-1 rounded-md bg-gray-900">
+                  <i class="fa-brands fa-google-play text-3xl mr-2"></i>
+                  <div class="text-left">
+                    <p class="text-sm">Baixar na</p>
+                    <p class="text-xl font-bold">Google Play</p>
+                  </div>
+                </button>
+              </div>
+              <img src="/img/app/app-icon.png" alt="Ícone do aplicativo" class="w-24 px-2 md:my-10">
             </div>
-            <img src="/img/app/app-icon.png" alt="Ícone do aplicativo" class="w-24">
+            <img v-if="true" src="/img/app/app-store.png" alt="Tela do aplicativo" class="hidden md:flex">
           </div>
           <h3 class="mt-10 mb-2 text-xl text-center font-bold">Seu aluguel na palma da mão!</h3>
           <p>Compare preços, fale conosco e alugue um carro onde estiver.</p>
         </div>
 
-        <img v-if="false" src="/img/app/app-store.png" alt="Tela do aplicativo">
       </section>
 
       <section id="faq" class="py-16 bg-gray-900 text-white">
@@ -242,7 +253,7 @@
                 </Transition>
               </button>
               <Transition name="show-answer">
-                <p v-if="faqControl === question.id" class="pb-2 text-sm">{{ question.answer }}</p>
+                <p v-if="faqControl === question.id" class="pb-2 text-sm max-w-5xl mx-auto">{{ question.answer }}</p>
               </Transition>
               <div class="border border-solid border-[#FF914D] border-collapse"></div>
             </li>
@@ -251,71 +262,80 @@
       </section>
     </main>
 
-    <footer id="footer" class="py-16 flex flex-col items-center justify-center bg-[#FF914D]">
+    <footer id="footer" class="py-16 bg-[#FF914D]">
 
-      <div class="pb-4">
-        <h2 class="text-center font-bold">ACESSO CLIENTE</h2>
+      <div
+        class="flex flex-col items-center justify-center text-sm md:mx-[10%] lg:flex-row lg:last:items-stretch lg:max-w-6xl xl:mx-auto">
 
-        <div class="flex flex-col items-center py-2 child:py-1">
-          <button class="hover:font-bold active:font-bold">Acesse sua Conta</button>
-          <button class="hover:font-bold active:font-bold">Cadastra-se</button>
-          <button class="hover:font-bold active:font-bold">Consultar reservas</button>
-        </div>
-      </div>
+        <div class="md:child:w-1/3 md:flex md:items-baseline md:justify-between md:w-full">
 
-      <div class="py-4 cursor-default">
-        <h2 class="font-bold">ATENDIMENTO AO CLIENTE</h2>
+          <div class="pb-4 text-center cursor-default lg:pb-0 lg:text-left">
+            <h2 class="font-bold">ATENDIMENTO AO CLIENTE</h2>
 
-        <div class="flex flex-col items-center child:py-2">
-          <div>
-            <div class="flex items-center">
-              <i class="fa-solid fa-phone-volume"></i>
-              <p class="pl-3">Central de reservas</p>
+            <div class="flex flex-col items-center child:py-2 lg:items-start">
+              <div>
+                <div class="flex items-center">
+                  <i class="fa-solid fa-phone-volume"></i>
+                  <p class="pl-3">Central de reservas</p>
+                </div>
+                <p class="text-center lg:text-left">24h - 0800-000-000</p>
+              </div>
+
+              <div>
+                <div class="flex items-center">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <p class="pl-3">Assistência a clientes</p>
+                </div>
+                <p class="text-center lg:text-left">24h - (11) 00000-0000</p>
+              </div>
+
+              <div>
+                <div class="flex items-center">
+                  <i class="fa-brands fa-whatsapp"></i>
+                  <p class="pl-3">Assistência a clientes</p>
+                </div>
+                <p class="text-center lg:text-left">24h - (11) 00000-0000</p>
+              </div>
+
+              <div class="flex items-center">
+                <i class="fa-solid fa-envelope"></i>
+                <p class="pl-3">Envie uma mensagem</p>
+              </div>
             </div>
-            <p class="text-center">24h - 0800-000-000</p>
           </div>
 
-          <div>
-            <div class="flex items-center">
-              <i class="fa-brands fa-whatsapp"></i>
-              <p class="pl-3">Assistência a clientes</p>
+          <div class="py-4 text-center lg:py-0 lg:text-left">
+            <h2 class="font-bold">ACESSO CLIENTE</h2>
+
+            <div class="flex flex-col items-center py-2 child:py-1 lg:items-start">
+              <button class="hover:font-bold active:font-bold">Acesse sua Conta</button>
+              <button class="hover:font-bold active:font-bold">Cadastra-se</button>
+              <button class="hover:font-bold active:font-bold">Consultar reservas</button>
             </div>
-            <p class="text-center">24h - (11) 00000-0000</p>
           </div>
 
-          <div>
-            <div class="flex items-center">
-              <i class="fa-brands fa-whatsapp"></i>
-              <p class="pl-3">Assistência a clientes</p>
+          <div class="py-4 text-center lg:py-0 lg:text-left">
+            <h2 class="font-bold">SOBRE NÓS</h2>
+
+            <div class="flex flex-col items-center py-2 child:py-1 lg:items-start">
+              <button class="hover:font-bold active:font-bold">Aluga carros</button>
+              <button class="hover:font-bold active:font-bold">Política de Privacidade</button>
+              <button class="hover:font-bold active:font-bold">Termos e Condições</button>
+              <button class="hover:font-bold active:font-bold">Código de Conduta</button>
+              <button class="hover:font-bold active:font-bold">Trabalhe Conosco</button>
             </div>
-            <p class="text-center">24h - (11) 00000-0000</p>
           </div>
 
-          <div class="flex items-center">
-            <i class="fa-solid fa-envelope"></i>
-            <p class="pl-3">Envie uma mensagem</p>
-          </div>
         </div>
-      </div>
 
-      <div class="py-4">
-        <h2 class="text-center font-bold">SOBRE NÓS</h2>
-
-        <div class="flex flex-col items-center py-2 child:py-1">
-          <button class="hover:font-bold active:font-bold">Aluga carros</button>
-          <button class="hover:font-bold active:font-bold">Política de Privacidade</button>
-          <button class="hover:font-bold active:font-bold">Termos e Condições</button>
-          <button class="hover:font-bold active:font-bold">Código de Conduta</button>
-          <button class="hover:font-bold active:font-bold">Trabalhe Conosco</button>
+        <div
+          class="pt-4 child:px-3 child:text-3xl lg:flex lg:flex-col lg:justify-between lg:items-center lg:pt-0 lg:child:px-0">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-square-x-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-youtube"></i>
+          <i class="fa-brands fa-linkedin"></i>
         </div>
-      </div>
-
-      <div class="pt-4 child:px-3 child:text-3xl ">
-        <i class="fa-brands fa-facebook"></i>
-        <i class="fa-brands fa-square-x-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-youtube"></i>
-        <i class="fa-brands fa-linkedin"></i>
       </div>
 
     </footer>
