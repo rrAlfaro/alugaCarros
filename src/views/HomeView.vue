@@ -3,19 +3,21 @@
     <NavMenu class="z-20" />
 
     <main>
-      <section
-        class="flex flex-col items-center justify-center h-[80vh] my-16 mx-[10%] text-center md:max-w-sm">
-        <div>
-          <h3 class="font-bold">Planeje, explore e inspire-se</h3>
+      <section class="relative h-[80vh] my-16 mx-[10%] text-center md:max-w-6xl xl:mx-auto">
+        <div class="flex flex-col items-center justify-center lg:max-w-sm h-full z-10">
+          <div>
+            <h3 class="font-bold">Planeje, explore e inspire-se</h3>
 
-          <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso carro</b>
-          </h1>
+            <h1 class="p-2 py-6 text-4xl font-extrabold">Para sua viagem, <b class="text-4xl text-[#FF914D]">nosso
+                carro</b>
+            </h1>
 
-          <p class="px-1 mt-4 font-normal text-slate-800">Descubra o melhor carro para você, economize, viage sem
-            preocupações e muito mais.</p>
+            <p class="px-1 mt-4 font-normal text-slate-800">Descubra o melhor carro para você, economize, viage sem
+              preocupações e muito mais.</p>
+          </div>
 
           <div
-            class="flex flex-col items-center justify-center w-full my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white ">
+            class="flex flex-col items-center justify-center w-full max-w-sm my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white lg:max-w-none">
             <button
               class="w-full px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a
                 class="flex items-center justify-between w-full" href="#booking">Reserve
@@ -27,6 +29,7 @@
             </button>
           </div>
         </div>
+        <img src="/img/cars/volkswagen_polo.png" alt="" class="absolute hidden max-w-3xl top-36 -z-10 lg:inline-block xl:-right-40">
       </section>
 
       <section class="mx-[10%] my-16 lg:max-w-6xl lg:mx-auto">
@@ -110,7 +113,7 @@
           <h2 class="p-1 text-3xl font-extrabold">Um carro para sua próxima aventura</h2>
         </div>
 
-        <div class="lg:flex lg:items-center lg:justify-between lg:max-w-6lg lg:mx-auto">
+        <div class="lg:flex lg:items-center lg:justify-between lg:max-w-6xl lg:mx-auto">
           <div class="md:flex md:items-center md:justify-between lg:w-2/3">
             <ul class="my-16 w-full md:min-w-[10rem] md:max-w-[12rem] xl:max-w-xs">
               <li v-for="car in cars" :key="car.id">
@@ -228,7 +231,7 @@
               </div>
               <img src="/img/app/app-icon.png" alt="Ícone do aplicativo" class="w-24 px-2 md:my-10">
             </div>
-            <img v-if="true" src="/img/app/app-store.png" alt="Tela do aplicativo" class="hidden md:flex">
+            <img src="/img/app/app-store.png" alt="Tela do aplicativo" class="hidden w-[40%] md:flex">
           </div>
           <h3 class="mt-10 mb-2 text-xl text-center font-bold">Seu aluguel na palma da mão!</h3>
           <p>Compare preços, fale conosco e alugue um carro onde estiver.</p>
