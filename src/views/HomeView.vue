@@ -3,8 +3,8 @@
     <NavMenu class="z-20" />
 
     <main>
-      <section class="relative h-[80vh] my-16 mx-[10%] text-center md:max-w-6xl xl:mx-auto">
-        <div class="flex flex-col items-center justify-center lg:max-w-sm h-full z-10">
+      <section class="h-[80vh] my-16 mx-[10%] text-center md:max-w-6xl xl:mx-auto flex justify-between">
+        <div class="relative flex flex-col items-center justify-center h-full mx-auto lg:max-w-sm lg:mx-0 z-10">
           <div>
             <h3 class="font-bold">Planeje, explore e inspire-se</h3>
 
@@ -17,7 +17,7 @@
           </div>
 
           <div
-            class="flex flex-col items-center justify-center w-full max-w-sm my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white lg:max-w-none">
+            class="flex flex-col items-center justify-center w-full my-16 mx-auto gap-3 text-center text-xl font-extrabold text-white lg:max-w-none">
             <button
               class="w-full px-4 py-3 rounded-sm bg-[#FF914D] transition-all active:bg-[#ff7e2e] hover:bg-[#ff7e2e]"><a
                 class="flex items-center justify-between w-full" href="#booking">Reserve
@@ -29,7 +29,8 @@
             </button>
           </div>
         </div>
-        <img src="/img/cars/volkswagen_polo.png" alt="" class="absolute hidden max-w-3xl top-36 -z-10 lg:inline-block xl:-right-40">
+        <img src="/img/cars/volkswagen_polo.png" alt="Volkswagen Polo"
+          class="hidden lg:inline-block place-self-center justify-self-center lg:h-80 xl:h-96 -z-10">
       </section>
 
       <section class="mx-[10%] my-16 lg:max-w-6xl lg:mx-auto">
@@ -183,16 +184,14 @@
           <div class="w-2/4 mx-auto p-4 bg-transparent/50 lg:grid lg:grid-cols-3 lg:w-full">
             <div v-for="store in stores" :key="store" class="lg:w-2/3 lg:mx-auto">
               <button v-if="store.type_id === placeControl"
-                class="flex items-center justify-between w-full p-2 transition-all group hover:scale-90 active:scale-90 lg:hidden">
-                <p
-                  class="group-hover:underline group-hover:underline-offset-2 group-active:underline group-active:underline-offset-2">
+                class="flex items-center justify-between w-full p-2 transition-all group hover:scale-95 active:scale-95 lg:hidden">
+                <p>
                   {{ store.name }}</p>
                 <i class="fa-solid fa-chevron-right"></i>
               </button>
               <button
-                class="hidden items-center justify-between w-full p-2 transition-all group hover:scale-90 active:scale-90 lg:flex">
-                <p
-                  class="group-hover:underline group-hover:underline-offset-2 group-active:underline group-active:underline-offset-2">
+                class="hidden items-center justify-between w-full p-2 transition-all group hover:scale-95 active:scale-95 lg:flex">
+                <p>
                   {{ store.name }}</p>
                 <i class="fa-solid fa-chevron-right"></i>
               </button>
